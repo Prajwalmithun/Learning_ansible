@@ -1,0 +1,17 @@
+- name: View the host variables
+  hosts: all
+  vars:
+        http_port_1: 80
+        pkg_1: httpd
+
+  tasks: 
+        - name: Get the value of the vriable (http_port)
+          debug:
+                msg: "The HTTP port is {{ http_port_1 }}"
+        - name: Get the variable pkg
+          debug:
+                msg: 
+                  - "The package installed is {{ pkg_1 }}"
+                  - "The hostname is {{ inventory_hostname }}"
+                  - "Ansible version is {{ ansible_version }}"
+

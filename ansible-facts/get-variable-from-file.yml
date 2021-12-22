@@ -1,0 +1,10 @@
+---
+- name: Getting variables from a file.
+  hosts: localhost
+  gather_facts: false
+  vars_files: variables.yml
+  tasks:
+    - debug:
+          msg:
+            - "My name is {{ NAME }}"
+            - "I am from {{ LOCATION }}"

@@ -1,0 +1,8 @@
+---
+- name: Gather IP address of localhost
+  hosts: client1
+  tasks:
+  - debug:
+            msg:
+              - "The IP address of localhost is {{ ansible_eth0.ipv4.address}}"
+        

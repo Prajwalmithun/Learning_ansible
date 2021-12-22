@@ -1,0 +1,7 @@
+---
+ - hosts: client1
+
+   tasks:
+         - service:
+               name: httpd
+               state: stopped

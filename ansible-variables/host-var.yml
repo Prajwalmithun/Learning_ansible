@@ -1,0 +1,11 @@
+---
+- name: View the host variables
+  hosts: all
+  
+  tasks: 
+        - name: Get the value of the vriable (http_port)
+          debug:
+                msg: "The HTTP port is {{ http_port }}"
+        - name: Get the variable pkg
+          debug:
+                msg: "The package installed is {{ pkg }}"

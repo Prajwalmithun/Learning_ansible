@@ -1,0 +1,9 @@
+---
+- name: Script to get kernel version
+  hosts: client1
+  tasks:
+    - shell: "uname -r"
+      register: ker_ver
+    - set_fact:
+          ker_ver: "{{ ker_ver.stdout }}"
+    - debug: var=ker_ver

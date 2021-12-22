@@ -1,0 +1,16 @@
+---
+- name: Get user input
+  hosts: localhost
+  gather_facts: no
+
+  vars_prompt:
+        - name: username
+          prompt: Enter your username
+          private: no
+        - name: password
+          prompt: Enter your password
+          private: yes
+
+  tasks:
+        - debug:
+              msg: "Your username is {{ username}} and {{ password }}"
